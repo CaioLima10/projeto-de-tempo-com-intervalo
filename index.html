@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>projeto Tempo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="App.js" defer></script>
+    <script src="Progresso.js" defer></script>
+  </head>
+  <body>
+   
+    <figure class="clock">
+      <audio
+        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
+      ></audio>
+      <svg class="progress-ring" height="120" width="120">
+        <circle
+          class="progress-ring__circle"
+          stroke-width="8"
+          fill="transparent"
+          r="50"
+          cx="60"
+          cy="60"
+        />
+      </svg>
+      <div class="mins">0</div>
+      <div>:</div>
+      <div class="secs">00</div>
+    </figure>
+
+    <div class="btn-group">
+      <button class="reset">Resertar</button>
+      <button class="pause">Pausar</button>
+    </div>
+
+    <form action=".">
+      <label for="focusTime">Tempo</label>
+      <input type="number" value="1" id="focusTime" />
+      <label for="breakTime">Tempo de Intervalo</label>
+      <input type="number" value="1" id="breakTime" />
+      <button class ="start"type="submit">Iniciar Tempo</button>
+    </form>
+  </body>
+</html>

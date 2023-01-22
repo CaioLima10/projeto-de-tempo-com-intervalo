@@ -1,0 +1,179 @@
+ *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background: rgb(243, 243, 243);
+  color: #131313;
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  margin: 15px 0;
+  font-weight: 900;
+  font-size: 28px;
+  text-align: center;
+}
+
+input {
+  transition: 0.5s ease-in-out;
+  width: 300px;
+  margin-left: 25px;
+  padding-left: 20px;
+  font-size: 50px;
+  background: rgba(238, 237, 237, 0.925);
+  border: none;
+}
+
+.btn-group {
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  font-size: 18px;
+  transition: 0.5s ease-in-out;
+}
+label {
+  font-size: 20px;
+  margin-left: 40px;
+  
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.178);
+  border: 1px solid black;
+  margin: 5px auto;
+}
+button{
+  border-radius: 8px;
+  border-bottom: 2px solid black;
+}
+button:hover{
+  background-color: rgb(84, 84, 250);
+}
+.start {
+  background: rgb(50, 36, 253);
+  color: white;
+}
+.break {
+  background: rgb(0, 199, 116);
+  color: #000000;
+}
+.reset {
+  margin-top: 50px;
+  margin-left: 200px;
+  width: 150px;
+  background: rgb(247, 35, 35);
+  color: #ffffff;
+}
+.pause {
+  margin-top: 50px;
+  width: 150px;
+  background: rgb(250, 153, 43);
+}
+.resume {
+  background: rgb(131, 10, 252);
+  color: white;
+}
+.clock {
+  padding: 3px;
+  display: flex;
+  position: relative;
+  margin-top: 30px;  
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+
+  font-size: 24px;
+}
+.progress-ring {
+  margin-top: 50px;
+ margin-left: 70px;
+
+  transform: translate(-50%, -50%);
+}
+
+.progress-ring__circle {
+  transition: 0.5s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke: rgb(5, 22, 250);
+  box-shadow: 2px 0 2px 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 4px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.danger {
+  stroke: rgb(243, 17, 28);
+  animation: pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: rotate(-90deg) scale(1);
+  }
+  50% {
+    transform: rotate(-90deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(-90deg) scale(0.8);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "head head"
+      "clock form"
+      "btns ji";
+  }
+  .btn-group {
+    grid-area: btns;
+    justify-content: center;
+  }
+  .clock {
+    grid-area: clock;
+    height: 100%;
+  }
+  h1 {
+    grid-area: head;
+
+    align-self: center;
+  }
+  form {
+    align-self: center;
+    justify-self: center;
+    grid-area: form;
+    width: 50%;
+    justify-content: space-around;
+  }
+  footer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  form {
+    height: 40%;
+  }
+  footer {
+    position: static;
+  }
+}
